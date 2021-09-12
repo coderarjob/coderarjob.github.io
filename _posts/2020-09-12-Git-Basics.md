@@ -1,14 +1,14 @@
 ---
-layout: post
-title: Git basics
+layout: none
+tags: [git]
+catagory: [leaning]
+title: Git basics - Remote branches
 ---
 
 Source: [Pro Git](https://git-scm.com/book/en/v2) for PDF, EPUB and Kindle
 files.
 
-## Remote branches
-
-### Terminologies
+## Terminologies
 
 **Tracking branches** are local branches that have a direct relationship to a 
 remote branch. If you’re on a tracking branch and type git pull, Git
@@ -24,7 +24,7 @@ different things._
 
 -----
 
-### git-clone
+## git-clone
 
 When you clone a repository, it generally automatically creates a master branch
 that tracks origin/master. However you can set up other tracking branches if
@@ -76,7 +76,7 @@ create a tracking branch first.
 
 -----
 
-### Create local tracking branches
+## Create local tracking branches
 
 Checking out a local branch from a remote-tracking branch automatically creates
 a tracking branch.
@@ -90,7 +90,7 @@ Switched to a new branch 'kernel/base/debugconsole'
 
 This is very common operation, so there are shortcuts available.
 
-#### Shortcut 1
+### Shortcut 1
 
 ```bash
 $ git checkout --track origin/kernel/base/debugconsole
@@ -99,7 +99,7 @@ Branch 'kernel/base/debugconsole' set up to track remote branch 'kernel/base/deb
 Switched to a new branch 'kernel/base/debugconsole'
 ```
 
-#### Shortcut 2
+### Shortcut 2
 
 This operation is so common, that there's even a shortcut for that shortcut!
 
@@ -123,7 +123,7 @@ $ git branch -vv
   master                   db1d865 [origin/master] Merge branch 'develop'
 ```
 
-### Setup an exiting local branch as a tracking branch
+## Setup an exiting local branch as a tracking branch
 
 If you already have a local branch and want to set it to a tracking branch, you
 use the `-u` or `-set-upstream-to` option.
@@ -140,11 +140,12 @@ This option can also be used to change the upstream branch.
 
 A branch is a pointer that points to one of the latest commit. It also has a
 pointer to it parent commit(s). However, 'tags' or 'remote-tracking' branches
-are pointers that do not change. That means,your new commit will not be part 
-of any branch and will become untraceable, except by the exact commit hash.
+are pointers that do not change. That means, your new commit become untracable,
+as the tag or the remote-tracking branch will not move forward to your latest
+commit. It can only be accessed by the exact commit hash.
 
-This is what is meant by 'detached HEAD'. The head which points to the current
-commit, now is not part of a branch, it the former has not moved.
+This is what is meant by 'detached HEAD'. The HEAD points to the current
+commit, but is not part of a branch.
 
 ### Checking out tags
 
