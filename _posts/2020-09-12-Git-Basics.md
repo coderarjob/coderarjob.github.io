@@ -8,6 +8,8 @@ files.
 
 ## Remote branches
 
+### Terminologies
+
 **Tracking branches** are local branches that have a direct relationship to a 
 remote branch. If you’re on a tracking branch and type git pull, Git
 automatically knows which server to fetch from and which branch to merge in.
@@ -17,7 +19,7 @@ The remote branch it tracks is called an **upstream branch**.
 servers. You can checkout to a remote-tracking branch, but you will be in a
 'detached HEAD' state. Any commits will get lost!
 
-```
+```bash
 $ git checkout origin/kernel/base/debugconsole
 Note: switching to 'origin/kernel/base/debugconsole'.
 
@@ -36,7 +38,7 @@ Or undo this operation with:
 
 Turn off this advice by setting config variable advice.detachedHead to false
 
-HEAD is now at 7048ff3 Shows BOOT_INFO structure contents to PK_DEBUG.  Some minor changes
+HEAD is now at 7048ff3 Shows BOOT_INFO structure contents to PK_DEBUG. Some minor changes
 $                                                                     [7048ff3]
 
 ```
@@ -46,7 +48,7 @@ different things._
 
 -----
 
-`git-clone`
+### git-clone
 
 When you clone a repository, it generally automatically creates a master branch
 that tracks origin/master. However you can set up other tracking branches if
@@ -60,7 +62,7 @@ repository. However you do not have local, editable copies of them
 If you want to contribute on a remote branch, you will need to create a local
 tracking branch.
 
-```
+```bash
 $ git clone git@github.com:coderarjob/meghaos-x86.git
 $ cd meghaos-x86
 ```
@@ -68,7 +70,7 @@ $ cd meghaos-x86
 Clone brings down all the remote branches and all the assiciated histories.
 At this point you can be offline as all the remote data is available locally.
 
-```
+```bash
 # To see the list of remote branches.
 $ git branch --remote
 
@@ -82,8 +84,9 @@ $ git branch --remote
   origin/master
 ```
 
-```
-# To see the list of tracking branches.
+To see the list of tracking branches.
+
+```bash
 $ git branch -vv
 
 * master db1d865 [origin/master] Merge branch 'develop'
@@ -92,15 +95,17 @@ $ git branch -vv
 You have one local branch 'master' which tracks the remote branch 
 'origin/master'. 
 
-Say you cant to work on 'origin/kernel/base/userland' branch, you will need to
-create a tracking branch.
+Say you cant to work on 'origin/kernel/base/debugconsole' branch, you will need to
+create a tracking branch first.
+
+-----
 
 ### Create local tracking branches
 
 Checking out a local branch from a remote-tracking branch automatically creates
 a tracking branch.
 
-```
+```bash
 $ git checkout -b kernel/base/debugconsole origin/kernel/base/debugconsole
 
 Branch 'kernel/base/debugconsole' set up to track remote branch 'kernel/base/debugconsole' from 'origin'.
@@ -111,7 +116,7 @@ This is very common operation, so there are shortcuts available.
 
 #### Shortcut 1
 
-```
+```bash
 $ git checkout --track origin/kernel/base/debugconsole
 
 Branch 'kernel/base/debugconsole' set up to track remote branch 'kernel/base/debugconsole' from 'origin'.
@@ -125,7 +130,7 @@ This operation is so common, that there's even a shotcut for that shortcut!
 If a branch name you are trying to checkout **a)** does not exit and 
 **b)** exactly matches a name on only one remote, Git will create a tracking branch.
 
-```
+```bash
 $ git checkout kernel/base/debugconsole
 
 Branch 'kernel/base/debugconsole' set up to track remote branch 'kernel/base/debugconsole' from 'origin'.
@@ -135,22 +140,25 @@ Switched to a new branch 'kernel/base/debugconsole'
 Now check the list of branches with `-vv` option. You will not find another
 tracking branch.
 
-```
+```bash
 $ git branch -vv
 
 * kernel/base/debugconsole 7048ff3 [origin/kernel/base/debugconsole] Shows BOOT_INFO structure contents to PK_DEBUG. Some minor changes
   master                   db1d865 [origin/master] Merge branch 'develop'
 ```
 
-### Setup a local branch as a tracking branch
+### Setup an exiting local branch as a tracking branch
 
 If you already have a local branch and want to set it to a tracking branch, you
 use the `-u` or `-set-upstream-to` option.
 
-```
+```bash
 $ git checkout debugging
 $ git branch -u origin/kernel/base/debugconsole
 Branch 'debugging' set up to track remote branch 'kernel/base/debugconsole' from 'origin'.
 ```
 
 This option can also be used to change the upstream branch.
+
+----
+----
