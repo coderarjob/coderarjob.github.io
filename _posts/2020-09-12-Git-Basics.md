@@ -19,30 +19,6 @@ The remote branch it tracks is called an **upstream branch**.
 servers. You can checkout to a remote-tracking branch, but you will be in a
 'detached HEAD' state. Any commits will get lost!
 
-```bash
-$ git checkout origin/kernel/base/debugconsole
-Note: switching to 'origin/kernel/base/debugconsole'.
-
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by switching back to a branch.
-
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -c with the switch command. Example:
-
-  git switch -c <new-branch-name>
-
-Or undo this operation with:
-
-  git switch -
-
-Turn off this advice by setting config variable advice.detachedHead to false
-
-HEAD is now at 7048ff3 Shows BOOT_INFO structure contents to PK_DEBUG. Some minor changes
-$                                                                     [7048ff3]
-
-```
-
 _Note: The terminologies, 'tracking branch' and 'remote-tracking branch' mean
 different things._
 
@@ -54,7 +30,7 @@ When you clone a repository, it generally automatically creates a master branch
 that tracks origin/master. However you can set up other tracking branches if
 you wish.
 
-Clonning a repository into a newly created directory, creates remote-tracking 
+Cloning a repository into a newly created directory, creates remote-tracking 
 branches (not the same as "tracking branches") for each branch in the cloned 
 repository. However you do not have local, editable copies of them 
 (That is you do not have a local branch that tracks a remote branch).
@@ -67,7 +43,7 @@ $ git clone git@github.com:coderarjob/meghaos-x86.git
 $ cd meghaos-x86
 ```
 
-Clone brings down all the remote branches and all the assiciated histories.
+Clone brings down all the remote branches and all the associated histories.
 At this point you can be offline as all the remote data is available locally.
 
 ```bash
@@ -125,7 +101,7 @@ Switched to a new branch 'kernel/base/debugconsole'
 
 #### Shortcut 2
 
-This operation is so common, that there's even a shotcut for that shortcut!
+This operation is so common, that there's even a shortcut for that shortcut!
 
 If a branch name you are trying to checkout **a)** does not exit and 
 **b)** exactly matches a name on only one remote, Git will create a tracking branch.
@@ -159,6 +135,57 @@ Branch 'debugging' set up to track remote branch 'kernel/base/debugconsole' from
 ```
 
 This option can also be used to change the upstream branch.
+
+## Checking out a remote-tracking branch or tag.
+
+A branch is a pointer that points to one of the latest commit. It also has a
+pointer to it parent commit(s). However, 'tags' or 'remote-tracking' branches
+are pointers that do not change. That means,your new commit will not be part 
+of any branch and will become untraceable, except by the exact commit hash.
+
+This is what is meant by 'detached HEAD'. The head which points to the current
+commit, now is not part of a branch, it the former has not moved.
+
+### Checking out tags
+
+A tag always points to a particular commit and can have associated data.
+
+Say you want to fix a bug on an older version, you first need to create a new
+branch for that. 
+
+```bash
+# We want to make change on the files tagged `v2.0.0.0`
+# New branch is created so that we can edit the files and commit.
+
+$ git checkout -b version2 v2.0.0.0
+Switched to a new branch 'version2'
+```
+
+### Checking out remote-tracking branch
+
+Similar message will appear, when checking out tags.
+
+```bash
+$ git checkout origin/kernel/base/debugconsole
+Note: switching to 'origin/kernel/base/debugconsole'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 7048ff3 Shows BOOT_INFO structure contents to PK_DEBUG. Some minor changes
+```
 
 ----
 ----
