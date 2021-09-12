@@ -1,5 +1,5 @@
 ---
-layout: none
+layout: post
 tags: [git]
 catagory: [leaning]
 title: Git basics - Remote branches
