@@ -1,6 +1,5 @@
 ---
-layout: post
-tags: "git basics"
+layout: none
 title: Git basics - Remote branches
 ---
 
