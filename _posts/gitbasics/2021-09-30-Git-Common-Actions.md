@@ -1,5 +1,5 @@
 ---
-layout: none
+layout: post
 title: Git basics - Common actions
 ---
 
@@ -105,6 +105,7 @@ $ git checkout -b <new_branch> [<start_point>]
 The name of a commit at which to start the new branch. Defaults to **HEAD**.
 
 This command also switches to the `<new_branch>` after creation.
+
 ---
 
 ## Commiting
