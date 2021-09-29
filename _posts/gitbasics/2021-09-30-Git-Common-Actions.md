@@ -13,6 +13,12 @@ These are some common Git commands and a small description of that it does.
 $ git help clone
 $ git help log
 ```
+
+```javascript
+/* Some pointless Javascript */
+var rawr = ["r", "a", "w", "r"];
+```
+
 ---
 
 ## Branching and merging
@@ -101,8 +107,8 @@ The general form of this command is
 ```bash
 $ git checkout -b <new_branch> [<start_point>]
 ```
-**<start_point>**:
-The name of a commit at which to start the new branch. Defaults to **HEAD**.
+
+`<start_point>`: The name of a commit at which to start the new branch. Defaults to **HEAD**.
 
 This command also switches to the `<new_branch>` after creation.
 
