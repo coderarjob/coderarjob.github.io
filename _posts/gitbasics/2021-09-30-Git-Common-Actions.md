@@ -14,11 +14,6 @@ $ git help clone
 $ git help log
 ```
 
-```javascript
-/* Some pointless Javascript */
-var rawr = ["r", "a", "w", "r"];
-```
-
 ---
 
 ## Branching and merging

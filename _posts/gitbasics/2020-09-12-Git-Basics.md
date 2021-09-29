@@ -1,5 +1,5 @@
 ---
-layout: none
+layout: post
 title: Git basics - Remote branches
 ---
 
@@ -121,6 +121,8 @@ $ git branch -vv
   master                   db1d865 [origin/master] Merge branch 'develop'
 ```
 
+-----
+
 ## Setup an exiting local branch as a tracking branch
 
 If you already have a local branch and want to set it to a tracking branch, you
@@ -133,6 +135,8 @@ Branch 'debugging' set up to track remote branch 'kernel/base/debugconsole' from
 ```
 
 This option can also be used to change the upstream branch.
+
+-----
 
 ## Checking out a remote-tracking branch or tag.
 
