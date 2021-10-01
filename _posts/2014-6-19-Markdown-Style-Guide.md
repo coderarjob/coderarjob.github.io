@@ -41,10 +41,10 @@ Inline markup styles:
 
 Syntax highlighting can be used with triple backticks, like so:
 
-```javascript
+{% highlight javascript%}
 /* Some pointless Javascript */
 var rawr = ["r", "a", "w", "r"];
-```
+{% endhighlight %}
 
 Use two trailing spaces  
 on the right  
