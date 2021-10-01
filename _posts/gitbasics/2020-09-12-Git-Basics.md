@@ -36,15 +36,15 @@ repository. However you do not have local, editable copies of them
 If you want to contribute on a remote branch, you will need to create a local
 tracking branch.
 
-```bash
+{% highlight bash%}
 $ git clone git@github.com:coderarjob/meghaos-x86.git
 $ cd meghaos-x86
-```
+{% endhighlight %}
 
 Clone brings down all the remote branches and all the associated histories.
 At this point you can be offline as all the remote data is available locally.
 
-```bash
+{% highlight bash%}
 # To see the list of remote branches.
 $ git branch --remote
 
@@ -56,15 +56,15 @@ $ git branch --remote
   origin/kernel/base/screen
   origin/kernel/base/userland
   origin/master
-```
+{% endhighlight %}
 
 To see the list of tracking branches.
 
-```bash
+{% highlight bash%}
 $ git branch -vv
 
 * master db1d865 [origin/master] Merge branch 'develop'
-```
+{% endhighlight %}
 
 You have one local branch 'master' which tracks the remote branch 
 'origin/master'. 
@@ -79,23 +79,23 @@ create a tracking branch first.
 Checking out a local branch from a remote-tracking branch automatically creates
 a tracking branch.
 
-```bash
+{% highlight bash%}
 $ git checkout -b kernel/base/debugconsole origin/kernel/base/debugconsole
 
 Branch 'kernel/base/debugconsole' set up to track remote branch 'kernel/base/debugconsole' from 'origin'.
 Switched to a new branch 'kernel/base/debugconsole'
-```
+{% endhighlight %}
 
 This is very common operation, so there are shortcuts available.
 
 ### Shortcut 1
 
-```bash
+{% highlight bash%}
 $ git checkout --track origin/kernel/base/debugconsole
 
 Branch 'kernel/base/debugconsole' set up to track remote branch 'kernel/base/debugconsole' from 'origin'.
 Switched to a new branch 'kernel/base/debugconsole'
-```
+{% endhighlight %}
 
 ### Shortcut 2
 
@@ -104,22 +104,22 @@ This operation is so common, that there's even a shortcut for that shortcut!
 If a branch name you are trying to checkout **a)** does not exit and 
 **b)** exactly matches a name on only one remote, Git will create a tracking branch.
 
-```bash
+{% highlight bash%}
 $ git checkout kernel/base/debugconsole
 
 Branch 'kernel/base/debugconsole' set up to track remote branch 'kernel/base/debugconsole' from 'origin'.
 Switched to a new branch 'kernel/base/debugconsole'
-```
+{% endhighlight %}
 
 Now check the list of branches with `-vv` option. You will not find another
 tracking branch.
 
-```bash
+{% highlight bash%}
 $ git branch -vv
 
 * kernel/base/debugconsole 7048ff3 [origin/kernel/base/debugconsole] Shows BOOT_INFO structure contents to PK_DEBUG. Some minor changes
   master                   db1d865 [origin/master] Merge branch 'develop'
-```
+{% endhighlight %}
 
 -----
 
@@ -128,11 +128,11 @@ $ git branch -vv
 If you already have a local branch and want to set it to a tracking branch, you
 use the `-u` or `-set-upstream-to` option.
 
-```bash
+{% highlight bash%}
 $ git checkout debugging
 $ git branch -u origin/kernel/base/debugconsole
 Branch 'debugging' set up to track remote branch 'kernel/base/debugconsole' from 'origin'.
-```
+{% endhighlight %}
 
 This option can also be used to change the upstream branch.
 
@@ -156,19 +156,19 @@ A tag always points to a particular commit and can have associated data.
 Say you want to fix a bug on an older version, you first need to create a new
 branch for that. 
 
-```bash
+{% highlight bash%}
 # We want to make change on the files tagged `v2.0.0.0`
 # New branch is created so that we can edit the files and commit.
 
 $ git checkout -b version2 v2.0.0.0
 Switched to a new branch 'version2'
-```
+{% endhighlight %}
 
 ### Checking out remote-tracking branch
 
 Similar message will appear, when checking out tags.
 
-```bash
+{% highlight bash%}
 $ git checkout origin/kernel/base/debugconsole
 Note: switching to 'origin/kernel/base/debugconsole'.
 
@@ -188,7 +188,7 @@ Or undo this operation with:
 Turn off this advice by setting config variable advice.detachedHead to false
 
 HEAD is now at 7048ff3 Shows BOOT_INFO structure contents to PK_DEBUG. Some minor changes
-```
+{% endhighlight %}
 
 ----
 ----

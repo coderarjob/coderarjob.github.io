@@ -9,10 +9,10 @@ These are some common Git commands and a small description of that it does.
 
 ### 1. Common way to get help
 
-```bash
+{% highlight bash%}
 $ git help clone
 $ git help log
-```
+{% endhighlight %}
 
 ---
 
@@ -20,19 +20,19 @@ $ git help log
 
 ### 1. To see which commits are not merged.
 
-```bash
+{% highlight bash%}
 $ git log --no-merges issue54..origin/master
-```
+{% endhighlight %}
 This will filter the log and Git will display commits that are on the `origin/master` branch but not in `issue54` branch. Another example `git log --no-merges kernel/paging..develop`, to check if there are any commits to `develop` branch that is not there in the 'kernel/paging' branch. 
 
-```bash
+{% highlight bash%}
 $ git log --no-merges kernel/paging..develop
-```
+{% endhighlight %}
 Gets a list of commits in `develop` branch that is not there in the 'kernel/paging' branch. 
 
 ### 2. See all remote-tracking branches: 
 
-```bash
+{% highlight bash%}
 $ git branch --remote
 
   origin/HEAD -> origin/master
@@ -43,22 +43,22 @@ $ git branch --remote
   origin/kernel/base/screen
   origin/kernel/base/userland
   origin/master
-```
+{% endhighlight %}
 
 ### 3. See list of tracking branches: 
 
-```bash
+{% highlight bash%}
 $ git branch -vv
 
   * master db1d865 [origin/master] Merge branch 'develop'
-```
+{% endhighlight %}
 You have one local branch 'master' which tracks the remote branch 'origin/master'. 
 
 ### 4. Create tracking branches from remote-tracking branches
 
 Checking out a local branch from a remote-tracking branch automatically creates a tracking branch.
 
-```bash
+{% highlight bash%}
 # Method 1 (long method)
 $ git checkout -b kernel/base/debugconsole origin/kernel/base/debugconsole
 
@@ -76,32 +76,32 @@ $ git checkout --track origin/kernel/base/debugconsole
 
 Branch 'kernel/base/debugconsole' set up to track remote branch 'kernel/base/debugconsole' from 'origin'.
 Switched to a new branch 'kernel/base/debugconsole'
-```
+{% endhighlight %}
 
 Now check the list of branches with `-vv` option. You will not find another
 tracking branch.
 
-```bash
+{% highlight bash%}
 $ git branch -vv
 
   * kernel/base/debugconsole 7048ff3 [origin/kernel/base/debugconsole] Shows BOOT_INFO structure contents to PK_DEBUG. Some minor changes
   master                   db1d865 [origin/master] Merge branch 'develop'
-```
+{% endhighlight %}
 
 ### 5. Creation of new branches
 
-```bash
+{% highlight bash%}
 $ git checkout -b version2 v2.0.0.0
-```
+{% endhighlight %}
 This creates a new branch `version2`, starting at the commit pointed by the `v2.0.0.0` tag. 
 
 **Note**: This step is needed in reality, as tags are readonly branches, they always will point to a perticular branch and cannot be changed.
 
 The general form of this command is 
 
-```bash
+{% highlight bash%}
 $ git checkout -b <new_branch> [<start_point>]
-```
+{% endhighlight %}
 
 `<start_point>`: The name of a commit at which to start the new branch. Defaults to **HEAD**.
 
