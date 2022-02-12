@@ -1,3 +1,16 @@
+---
+---
+
+//
+// IMPORTS
+//
+@import "reset";
+@import "variables";
+// Syntax highlighting @import is at the bottom of this file
+
+/**************/
+/* BASE RULES */
+/**************/
 body {
   font-family: Helvetica, arial, sans-serif;
   font-size: 14px;
@@ -275,3 +288,8 @@ pre {
   pre code, pre tt {
     background-color: transparent;
     border: none; }
+
+// Settled on moving the import of syntax highlighting to the bottom of the CSS
+// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
+@import "highlights";
+@import "svg-icons";
