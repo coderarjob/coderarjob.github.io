@@ -19,10 +19,11 @@ Before you begin, please check the GitHub page for the requiremnets.
 
 At the time of writing, here are the minimum requirements.
 
-Editor | Current Min
--------|------------
-VIM    | 8.1.2269
-NeoVim | 0.5
+|Editor | Current Min|
+|-------|------------|
+|VIM    | 8.1.2269   |
+|NeoVim | 0.5        |
+
 
 **Note:**
 * Some features are not available in Neovim, and Neovim is not officially supported.
@@ -31,11 +32,11 @@ NeoVim | 0.5
   support](https://blog.siddharthkannan.in/vim/2019/08/31/compiling-vim-with-python/)
 
 
-Compiler | Current Min
----------|----------------
-GCC 	 |  8
-Clang 	 |  7
-MSVC 	 | 15.7 (VS 2017)
+|Compiler | Current Min   |
+|---------|---------------|
+|GCC 	  |  8            |
+|Clang 	  |  7            |
+|MSVC 	  | 15.7 (VS 2017)|
 
 ### The VIM plugin using Vundle.
 
