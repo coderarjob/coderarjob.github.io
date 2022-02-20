@@ -42,7 +42,7 @@ At the time of writing, here are the minimum requirements.
 ### Install the YCM plugin to VIM.
 
 With Vundle, all you need to do is to add the below like to your `.vimrc`. See
-[How to install Vundle](../2022-02-08-Vundle.md)
+[How to install Vundle](../Vundle)
 
 {% highlight vimscript%}
 Plugin 'ycm-core/YouCompleteMe'
