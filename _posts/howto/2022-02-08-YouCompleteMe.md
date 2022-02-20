@@ -39,8 +39,9 @@ At the time of writing, here are the minimum requirements.
 |Clang 	  |  7            |
 |MSVC 	  | 15.7 (VS 2017)|
 
-### The VIM plugin using Vundle.
+### Install the YCM plugin to VIM.
 
+With Vundle, all you need to do is to add the below like to your `.vimrc`. See
 [How to install Vundle](../2022-02-08-Vundle.md)
 
 {% highlight vimscript%}
@@ -50,8 +51,11 @@ Plugin 'ycm-core/YouCompleteMe'
 ### Build the YCM library.
 
 {% highlight bash%}
+$ # Install build requrements
 $ apt install build-essential cmake vim-nox python3-dev
+$ # Go to the directory where VIM plugin was installed. With Vundle it is here.
 $ cd ~/.vim/bundle/YouCompleteMe
+$ # I am building for Java and C language support. See YCM documentation for all the options.
 $ ./install.py --clangd-completer --java-completer --verbose
 {% endhighlight %}
 
