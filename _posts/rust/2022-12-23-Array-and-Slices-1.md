@@ -7,7 +7,7 @@ title: Rust - Arrays and Slices - Part 1
 
 An array is a fixed-size sequence of N elements of type T. The array type is written as [T; N].
 
-```
+```rust
     let t: [i32; 3] = [1, 2, 3];
 ```
 
