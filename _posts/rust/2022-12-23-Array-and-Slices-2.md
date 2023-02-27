@@ -1,7 +1,10 @@
 ---
 layout: post
 title: Rust - Arrays and Slices - Part 2
+catagories: rust
 ---
+
+Continutation from previous notes on arrays and slices in Rust.
 
 ### Rust By Examples/Arrays and Slices:
 

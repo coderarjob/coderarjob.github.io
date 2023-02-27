@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Installation of YouCompleteMe plugin.
+catagories: vim ycm vim-plugin
 ---
 
 [YouCompleteMe GitHub](https://github.com/ycm-core/YouCompleteMe)
@@ -44,20 +45,20 @@ At the time of writing, here are the minimum requirements.
 With Vundle, all you need to do is to add the below like to your `.vimrc`. See
 [How to install Vundle](../Vundle)
 
-{% highlight vimscript%}
+```vim
 Plugin 'ycm-core/YouCompleteMe'
-{% endhighlight %}
+```
 
 ### Build the YCM library.
 
-{% highlight bash%}
+```bash
 $ # Install build requrements
 $ apt install build-essential cmake vim-nox python3-dev
 $ # Go to the directory where VIM plugin was installed. With Vundle it is here.
 $ cd ~/.vim/bundle/YouCompleteMe
 $ # I am building for Java and C language support. See YCM documentation for all the options.
 $ ./install.py --clangd-completer --java-completer --verbose
-{% endhighlight %}
+```
 
 ## Troubleshooting
 
@@ -69,10 +70,10 @@ $ ./install.py --clangd-completer --java-completer --verbose
    which is was anyways not supported. But I found a fix
    [source](https://stackoverflow.com/questions/47812854/vim-youcompleteme-error-noextraconfdetected-no-ycm-extra-conf-py-file-detecte)
 
-   {% highlight vimscript%}
+   ```vim
    let g:ycm_global_ycm_extra_conf = '/home/coder/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py
    Plugin 'ycm-core/YouCompleteMe'
-   {% endhighlight %}
+   ```
 
    **Note:**
 

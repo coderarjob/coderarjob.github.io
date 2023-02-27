@@ -1,7 +1,10 @@
 ---
 layout: post
 title: Rust - Arrays and Slices - Part 1
+catagories: rust
 ---
+
+Notes on arrays and slices in Rust.
 
 ## Array
 

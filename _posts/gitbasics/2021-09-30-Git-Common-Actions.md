@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Git basics - Common actions
+catagories: git
 ---
 
 These are some common Git commands and a small description of that it does.

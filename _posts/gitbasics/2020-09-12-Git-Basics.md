@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Git basics - Remote branches
+catagories: git
 ---
 
 Source: [Pro Git](https://git-scm.com/book/en/v2) for PDF, EPUB and Kindle
