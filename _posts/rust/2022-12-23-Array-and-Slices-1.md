@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rust - Arrays and Slices - Part 1
-catagories: rust
+categories: rust
 ---
 
 Notes on arrays and slices in Rust.
@@ -96,7 +96,7 @@ Examples:
 ..=7;   // std::ops::RangeToInclusive
 ```
 
-The following two expressions are equivallent:
+The following two expressions are equivalent:
 
 ```rust
 
@@ -106,7 +106,7 @@ let y = 0..10;
 assert_eq!(x, y);
 ```
 
-Some gochas
+### Some gotchas
 
 ```rust
 let t = 0..3;       // This is a Range. Type Range<i32>

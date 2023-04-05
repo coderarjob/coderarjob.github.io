@@ -1,14 +1,14 @@
 ---
 layout: post
 title: Rust - Arrays and Slices - Part 2
-catagories: rust
+categories: rust
 ---
 
-Continutation from previous notes on arrays and slices in Rust.
+Continuation from previous notes on arrays and slices in Rust.
 
 ### Rust By Examples/Arrays and Slices:
 
-__Arays:__
+__Arrays:__
 An array is a collection of objects of the same type T, stored in contiguous memory. 
 
 Arrays are created using brackets `[]`, and their length, which is known at compile time, is part of 
